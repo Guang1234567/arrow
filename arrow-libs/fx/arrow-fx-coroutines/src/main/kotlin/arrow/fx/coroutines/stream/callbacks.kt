@@ -42,7 +42,7 @@ interface EmitterSyntax<A> {
  * Note that if neither `end()` nor other limit operators such as `take(N)` are called,
  * then the Stream will never end.
  */
-@UseExperimental(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::class)
 fun <A> Stream.Companion.callback(@BuilderInference f: suspend EmitterSyntax<A>.() -> Unit): Stream<A> =
   Stream.cancellable(f.andThen { CancelToken.unit })
 
@@ -112,7 +112,7 @@ fun <A> Stream.Companion.callback(@BuilderInference f: suspend EmitterSyntax<A>.
  * If neither `end()` nor other limit operators such as `take(N)` are called,
  * then the Stream will never end.
  */
-@UseExperimental(ExperimentalTypeInference::class)
+@OptIn(ExperimentalTypeInference::class)
 fun <A> Stream.Companion.cancellable(@BuilderInference f: suspend EmitterSyntax<A>.() -> CancelToken): Stream<A> =
   force {
     val q = Queue.unbounded<Chunk<A>>()

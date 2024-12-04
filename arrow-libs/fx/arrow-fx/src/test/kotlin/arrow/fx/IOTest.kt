@@ -44,7 +44,8 @@ import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.time.ExperimentalTime
-import kotlin.time.seconds as kSeconds
+//import kotlin.time.seconds as kSeconds
+import arrow.fx.coroutines.toSeconds as kSeconds
 
 @ExperimentalTime
 @kotlinx.coroutines.ObsoleteCoroutinesApi

@@ -1,5 +1,7 @@
 buildscript {
     repositories {
+        maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
+        gradlePluginPortal()
         maven { url "https://dl.bintray.com/47deg/hood" }
     }
     
@@ -24,12 +26,12 @@ apply plugin: "com.47deg.hood"
 apply from: "$SUB_PROJECT"
 
 dependencies {
-    compile project(":arrow-fx")
-    compile project(":arrow-fx-rx2")
-    compile project(":arrow-fx-reactor")
-    compile project(":arrow-benchmarks-fx:arrow-scala-benchmarks")
-    compile project(":arrow-benchmarks-fx:arrow-kio-benchmarks")
-    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
+    api project(":arrow-fx")
+    api project(":arrow-fx-rx2")
+    api project(":arrow-fx-reactor")
+    api project(":arrow-benchmarks-fx:arrow-scala-benchmarks")
+    api project(":arrow-benchmarks-fx:arrow-kio-benchmarks")
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
     compileOnly "org.openjdk.jmh:jmh-core:$JMH_CORE_VERSION"
 }
 
@@ -98,5 +100,6 @@ compareBenchmarksCI {
 }
 
 repositories {
+    maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
     maven { url "https://jitpack.io" }
 }

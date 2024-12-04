@@ -137,3 +137,6 @@ target/
 
 .bash_profile
 **/.kotlintest/
+
+.history
+.vscode

@@ -15,10 +15,10 @@ dependencies {
     implementation project(":arrow-fx-suspend-connection")
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
 
-    compile project(":arrow-core")
+    api project(":arrow-core")
 
-    testCompile "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
-    testCompile project(":arrow-fx-coroutines")
-    testCompile project(":arrow-fx-test")
-    testRuntime "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
+    testImplementation project(":arrow-fx-coroutines")
+    testImplementation project(":arrow-fx-test")
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
 }

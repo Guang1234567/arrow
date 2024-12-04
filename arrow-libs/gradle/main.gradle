@@ -16,6 +16,21 @@
 
 allprojects {
     repositories {
+        maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
         mavenCentral()
     }
+}
+
+subprojects {
+    println("--->  ${it.name}")
+
+    /*
+    it.tasks.withType(Copy) {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    it.tasks.withType(Jar) {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+    */
 }

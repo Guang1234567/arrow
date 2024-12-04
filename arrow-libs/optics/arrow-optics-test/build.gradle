@@ -8,10 +8,10 @@ apply from: "$PUBLICATION"
 apply from: "$ANIMALSNIFFER"
 
 dependencies {
-    compile project(":arrow-optics")
+    api project(":arrow-optics")
 
-    compile project(":arrow-core-test")
-    compile "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
+    api project(":arrow-core-test")
+    api "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
 
-    testRuntime "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
 }

@@ -6,7 +6,7 @@ plugins {
 apply from: "../$SUB_PROJECT"
 
 dependencies {
-    compile "it.msec:kio:$MSEC_KIO_VERSION"
+    api "it.msec:kio:$MSEC_KIO_VERSION"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
 }
@@ -20,5 +20,6 @@ compileTestKotlin {
 }
 
 repositories {
+    maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
     maven { url "https://jitpack.io" }
 }

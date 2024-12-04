@@ -3,7 +3,9 @@ buildscript {
         apply from: "gradle/$COMMON_SETUP"
     }
     repositories {
+        maven { url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/" }
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath "org.jetbrains.kotlinx:atomicfu-gradle-plugin:$ATOMICFU_VERSION"

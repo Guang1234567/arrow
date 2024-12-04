@@ -17,7 +17,8 @@ import kotlin.math.roundToInt
 import kotlin.random.Random
 import kotlin.time.Duration
 import kotlin.time.ExperimentalTime
-import kotlin.time.nanoseconds
+//import kotlin.time.nanoseconds
+import arrow.fx.coroutines.toNanoseconds as nanoseconds
 import arrow.fx.coroutines.nanoseconds as oldNanoseconds
 import arrow.fx.coroutines.Duration as FxDuration
 

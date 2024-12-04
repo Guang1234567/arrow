@@ -1,6 +1,8 @@
 package arrow.fx.coroutines
 
 import java.util.concurrent.TimeUnit
+import kotlin.time.DurationUnit
+import kotlin.time.toDuration
 
 @Deprecated(DeprecateDuration, ReplaceWith("timeUnit.toNanos(amount).nanoseconds", "kotlin.time.nanoseconds"))
 data class Duration(val amount: Long, val timeUnit: TimeUnit) {
@@ -101,3 +103,13 @@ val Int.seconds: Duration
 
 internal const val DeprecateDuration: String =
   "arrow.fx.coroutines.Duration is deprecated and will be removed in 0.13.0 in favor of kotlin.time.Duration"
+
+public val kotlin.time.Duration.inNanoseconds: Double get() = toDouble(DurationUnit.NANOSECONDS)
+
+public inline val Double.toNanoseconds: kotlin.time.Duration get() = toDuration(DurationUnit.NANOSECONDS)
+
+public inline val Int.toNanoseconds: kotlin.time.Duration get() = toDuration(DurationUnit.NANOSECONDS)
+
+public inline val Int.toSeconds: kotlin.time.Duration get() = toDuration(DurationUnit.SECONDS)
+
+public inline val Long.toSeconds: kotlin.time.Duration get() = toDuration(DurationUnit.SECONDS)

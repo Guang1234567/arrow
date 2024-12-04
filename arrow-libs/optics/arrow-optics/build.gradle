@@ -11,15 +11,15 @@ apply from: "$ANIMALSNIFFER"
 
 dependencies {
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
-    compile project(":arrow-core")
+    api project(":arrow-core")
 
     kapt project(":arrow-meta")
     kaptTest project(":arrow-meta")
 
-    testCompile "junit:junit:$JUNIT_VERSION"
+    testImplementation "junit:junit:$JUNIT_VERSION"
 
-    testRuntime "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
-    testCompile "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT_VINTAGE_VERSION"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:$KOTLIN_TEST_VERSION", excludeArrow
 
-    testCompile project(":arrow-optics-test")
+    testImplementation project(":arrow-optics-test")
 }

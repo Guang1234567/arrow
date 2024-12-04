@@ -12,7 +12,7 @@ dependencies {
     api project(':arrow-fx')
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
 
-    testCompile project(":arrow-fx-test")
+    testImplementation project(":arrow-fx-test")
     testImplementation project(":arrow-fx-test")
     testImplementation project(':arrow-fx')
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$KOTLINX_COROUTINES_VERSION"
